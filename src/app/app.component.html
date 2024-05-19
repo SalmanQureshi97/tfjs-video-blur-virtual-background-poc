@@ -1,0 +1,46 @@
+<video class="video" id="videoC" #videoC></video>
+<div class="container">
+  <canvas #canvas id="myCanvas"></canvas>
+  <div class="button-row">
+    <button
+      (click)="noBlur()"
+      id="noBlur"
+      [class.active]="blurAmount === 0"
+      class="blur-button"
+    >
+      <i class="fas fa-times"></i> No Blur
+    </button>
+    <button
+      (click)="lowBlur()"
+      id="lowBlur"
+      [class.active]="blurAmount === 3"
+      class="blur-button"
+    >
+      <i class="fas fa-circle"></i> Low Blur
+    </button>
+    <button
+      (click)="medBlur()"
+      id="mediumBlur"
+      [class.active]="blurAmount === 5"
+      class="blur-button"
+    >
+      <i class="fas fa-adjust"></i> Medium Blur
+    </button>
+    <button
+      (click)="highBlur()"
+      id="highBlur"
+      [class.active]="blurAmount === 10"
+      class="blur-button"
+    >
+      <i class="fas fa-circle-notch"></i> High Blur
+    </button>
+  </div>
+  <div class="background-container">
+    <img
+      (click)="setBackground(i)"
+      *ngFor="let item of [].constructor(4); let i = index"
+      [src]="'../assets/bg' + i + '.jpg'"
+      alt=""
+    />
+  </div>
+</div>
